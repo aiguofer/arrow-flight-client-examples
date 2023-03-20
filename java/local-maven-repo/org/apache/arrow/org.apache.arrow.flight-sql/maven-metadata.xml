@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.apache.arrow</groupId>
+  <artifactId>org.apache.arrow.flight-sql</artifactId>
+  <versioning>
+    <versions>
+      <version>12.0.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20230228003010</lastUpdated>
+  </versioning>
+</metadata>

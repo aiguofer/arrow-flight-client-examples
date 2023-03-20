@@ -11,11 +11,16 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <arrow.version>3.0.0</arrow.version>
+        <arrow.version>12.0.0-SNAPSHOT</arrow.version>
         <dep.guava.version>20.0</dep.guava.version>
         <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
     </properties>
-
+<repositories>
+    <repository>
+        <id>local-maven-repo</id>
+        <url>file:///${project.parent.basedir}/local-maven-repo</url>
+    </repository>
+</repositories>
     <dependencies>
         <dependency>
             <groupId>org.apache.arrow</groupId>
@@ -39,6 +44,11 @@
         <dependency>
             <groupId>org.apache.arrow</groupId>
             <artifactId>flight-grpc</artifactId>
+            <version>${arrow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.arrow</groupId>
+            <artifactId>flight-sql</artifactId>
             <version>${arrow.version}</version>
         </dependency>
         <dependency>

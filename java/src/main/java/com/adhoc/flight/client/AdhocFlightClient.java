@@ -17,13 +17,13 @@
 package com.adhoc.flight.client;
 
 import static java.util.Objects.requireNonNull;
+import static org.apache.arrow.flight.sql.impl.FlightSql.CommandStatementQuery;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -55,6 +55,7 @@ import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 
 import com.adhoc.flight.utils.QueryUtils;
 import com.google.common.base.Strings;
+import com.google.protobuf.Any;
 
 /**
  * Adhoc Flight Client encapsulating an active FlightClient and a corresponding
@@ -305,7 +306,10 @@ public final class AdhocFlightClient implements AutoCloseable {
    * @return a FlightInfo object.
    */
   public FlightInfo getInfo(String query, CallOption... options) {
-    return client.getInfo(FlightDescriptor.command(query.getBytes(StandardCharsets.UTF_8)), options);
+    final CommandStatementQuery.Builder builder = CommandStatementQuery.newBuilder();
+    builder.setQuery(query);
+    final FlightDescriptor descriptor = FlightDescriptor.command(Any.pack(builder.build()).toByteArray());
+    return client.getInfo(descriptor, options);
   }
 
   /**

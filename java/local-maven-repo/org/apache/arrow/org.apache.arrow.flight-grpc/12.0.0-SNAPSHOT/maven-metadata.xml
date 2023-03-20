@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.apache.arrow</groupId>
+  <artifactId>org.apache.arrow.flight-grpc</artifactId>
+  <versioning>
+    <lastUpdated>20230226232159</lastUpdated>
+    <snapshot>
+      <timestamp>20230226.232159</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>12.0.0-20230226.232159-1</value>
+        <updated>20230226232159</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>12.0.0-20230226.232159-1</value>
+        <updated>20230226232159</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>12.0.0-SNAPSHOT</version>
+</metadata>
